@@ -1,13 +1,14 @@
-package model;
+package com.example.l_weather.model;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import com.example.l_weather.db.LWeatherOpenHelper;
 
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import db.LWeatherOpenHelper;
 
 public class LWeatherDB 
 {

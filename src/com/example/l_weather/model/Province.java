@@ -1,4 +1,4 @@
-package model;
+package com.example.l_weather.model;
 
 public class Province 
 {
