@@ -1,6 +1,7 @@
 package com.example.l_weather.activity;
 
 import com.example.l_weather.R;
+import com.example.l_weather.service.AutoUpdateService;
 import com.example.l_weather.util.HttpCallbackListener;
 import com.example.l_weather.util.HttpUtil;
 import com.example.l_weather.util.Utility;
@@ -189,12 +190,14 @@ public class WeatherActivity extends Activity implements OnClickListener
 		SharedPreferences prefs = PreferenceManager.
 		getDefaultSharedPreferences(this);
 		cityNameText.setText( prefs.getString("city_name", ""));
-		temp1Text.setText(prefs.getString("temp1", ""));
-		temp2Text.setText(prefs.getString("temp2", ""));
+		temp1Text.setText(prefs.getString("temp2", ""));
+		temp2Text.setText(prefs.getString("temp1", ""));
 		weatherDespText.setText(prefs.getString("weather_desp", ""));
 		publishText.setText("今天" + prefs.getString("publish_time", "") + "发布");
 		currentDateText.setText(prefs.getString("current_date", ""));
 		weatherInfoLayout.setVisibility(View.VISIBLE);
 		cityNameText.setVisibility(View.VISIBLE);
+		Intent intent = new Intent(this, AutoUpdateService.class);
+		startService(intent);
 	}
 }
